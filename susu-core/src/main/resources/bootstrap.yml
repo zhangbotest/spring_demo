@@ -1,0 +1,40 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: naocs-susu
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        # 配置文件的环境
+        group: config-dev
+        # 配置文件的格式
+        file-extension: yaml
+        # 配置中心的地址
+        server-addr: 119.3.208.227:8848
+        # 配置文件prefix
+        prefix: ${spring.application.name}
+        #是否开启监听和自动刷新
+        refresh-enabled: true
+      discovery:
+        server-addr: 119.3.208.227:8848
+        group: config-dev
+  datasource:
+    #MySQL连接信息
+    url: jdbc:mysql://119.3.208.227:3308/susu?characterEncoding=utf8&connectTimeout=1000&socketTimeout=3000&autoReconnect=true&useUnicode=true&useSSL=false&serverTimezone=UTC
+    # 账号
+    username: root
+    # 密码
+    password: 123456
+
+
+
+
+
+
+
+
+
